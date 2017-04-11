@@ -12,15 +12,10 @@
 #import "MovieThirViewController.h"
 #import "MovieFourViewController.h"
 
-
-
-
 @interface MovieViewController ()<UIScrollViewDelegate>{
     
     NSMutableArray *_titleArr;
     NSMutableArray *_videosClassID;
-
-  
 }
 @property (nonatomic, strong) UISegmentedControl *segmentCtrl;
 @property (nonatomic, strong) UIScrollView *scrollView;

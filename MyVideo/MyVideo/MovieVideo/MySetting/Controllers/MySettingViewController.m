@@ -58,8 +58,8 @@
     self.title = @"我的";
     
     [UnityAds initialize:UnityAds_APP delegate:self];
-    _appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     
+    _appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     
     [self setupSections];
     [self setHeaderView];
@@ -109,7 +109,7 @@
     secItem1.funcName = @"清除缓存";
     secItem1.detailText = [NSString stringWithFormat:@"%.2fM缓存",[self getCanchSize]];
     secItem1.executeCode = ^{
-    
+        
         [self wipeCache];
     };
     secItem1.accessoryType = XBSettingAccessoryTypeDisclosureIndicator;
@@ -453,9 +453,7 @@
 -(void)watchVideos{
     
     if ([UnityAds isReady]) {
-        
         [UnityAds show:self placementId:@"rewardedVideo"];
-
     } else{
         [[EPProgressShow showHUDManager] showInfoWithStatus:@"还没准备好,稍等片刻再试..."];
     }

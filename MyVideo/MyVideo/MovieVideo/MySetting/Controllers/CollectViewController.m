@@ -31,12 +31,20 @@
     
     _dataArr = [NSMutableArray array];
     
-    
     [self createCollectViewView];
-    
+    [self customNavigationItem];
 }
 
-
+//自定制当前视图控制器的navigationItem
+-(void)customNavigationItem{
+    
+    UIBarButtonItem *backbtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back.png"] style:UIBarButtonItemStylePlain target:self action:@selector(popDoBack)];
+    
+    self.navigationItem.leftBarButtonItem =  backbtn;
+}
+-(void)popDoBack{
+    [self.navigationController popViewControllerAnimated:NO];
+}
 
 -(void)createCollectViewView{
     
@@ -87,7 +95,7 @@
     VideosDetailViewController *videoPlayerVC = [[VideosDetailViewController alloc] init];
     videoPlayerVC.v_id = model.v_id;
     [self.navigationController pushViewController:videoPlayerVC animated:YES];
-  
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -96,13 +104,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
