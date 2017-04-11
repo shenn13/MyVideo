@@ -44,7 +44,7 @@
     
     [[AFNetworkingManager manager] getDataWithUrl:urlStr parameters:nil successBlock:^(id data) {
         
-//        NSLog(@"-----SearchUrl-------%@",data);
+        NSLog(@"-----SearchUrl-------%@",data);
         
         for (NSDictionary *dic in data[@"data"]) {
             
