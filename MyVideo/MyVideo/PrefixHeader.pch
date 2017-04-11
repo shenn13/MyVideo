@@ -1,8 +1,8 @@
 //
 //  PrefixHeader.pch
-//  MyVideo
+//  WIFICheck-Dmeo
 //
-//  Created by shen on 17/4/11.
+//  Created by shen on 17/4/1.
 //  Copyright © 2017年 shen. All rights reserved.
 //
 
@@ -11,5 +11,95 @@
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#ifdef __OBJC__
+
+#ifndef __OPTIMIZE__
+#define NSLog(...) printf("DEBUG LOG:%s\n",[[NSString stringWithFormat:__VA_ARGS__] UTF8String]);
+#endif
+
+#endif
+
+
+//屏幕的宽和高
+#define kScreenWidth [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height
+
+//以iPhone 5的屏幕为基准
+#define W(x) kScreenWidth*(x)/320.0
+#define H(y) kScreenHeight*(y)/568.0
+
+
+#define kMainScreenColor [UIColor colorWithRed:120.0/255 green:120.0/255 blue:120.0/255 alpha:1]
+
+#define ViewBackgroundColor [UIColor colorWithRed:240.0/255 green:240.0/255 blue:240.0/255 alpha:1];
+
+#define IntervalColor [UIColor colorWithRed:240.0/255 green:240.0/255 blue:240.0/255 alpha:1]
+
+//选集按钮未选中颜色
+#define selectButtonColor [UIColor colorWithRed:240.0/255 green:240.0/255 blue:240.0/255 alpha:1]
+//选集选中颜色
+#define selectionsBtnColor [UIColor colorWithRed:0/255.0 green:181/255.0 blue:255/255.0 alpha:1]
+
+#define COLOR(R,G,B,A) [UIColor colorWithRed:(R)/255.0 green:(G)/255.0 blue:(B)/255.0 alpha:A]
+
+#import "UIImageView+WebCache.h"
+#import "PlayerTool.h"
+#import "UIView+MJ.h"
+#import "AFNetworkingManager.h"
+#import "EPProgressShow.h"
+#import "BaoHistoryManger.h"
+#import "UIImage+Extension.h"
+
+#import "AFNetworking.h"
+#import "SVProgressHUD.h"
+#import "MJRefresh.h"
+#import "Masonry.h"
+
+#define GDT_APP_ID @"1106075852"//REP_FLG_GDTID
+#define GDT_APP_KID @"3020526166509500"//REP_FLG_KID
+#define GDT_APP_CID @"6070028106800429"//REP_FLG_CID
+
+
+//AdMob APPID 原生广告ID 插屏广告ID  所有APP固定 三个ID
+#define AdMob_APP_ID @"ca-app-pub-4903381575382292~1388993566"
+#define AdMob_NativeExpressAdUnitID @"ca-app-pub-4903381575382292/4345741960"
+#define AdMob_CID @"ca-app-pub-4903381575382292/7073770369"
+#define AdMob_BannerViewAdUnitID @"ca-app-pub-4903381575382292/2865726763"
+
+//友盟统计
+#define UM_APP_KEY @"570c863f67e58e5b40000792"
+#define UnityAds_APP @"1320670"
+#import "PDKeyChain.h"
+#import "MySetting.h"
+
+
+#define MarkUrl @"https://api.52kandianying.cn/index.html?method=mark&appid=39&id=58"
+//福利片
+#define Homeurl @"https://api.52kandianying.cn/index.html?method=typeinfos&id=155"
+//电视剧
+#define HomeTVURL @"https://api.52kandianying.cn/index.html?method=typeinfos&id=71"
+//电影
+#define HomeMovieURL @"https://api.52kandianying.cn/index.html?method=typeinfos&id=1"
+
+//详情页面
+#define Detailurl @"https://api.52kandianying.cn/index.html?method=videoinfo&"
+
+//关键字热门搜索
+#define HotWordurl @"https://api.52kandianying.cn/index.html?method=hotkeys"
+//搜索
+#define SearchUrl @"https://api.52kandianying.cn/index.html?method=search&keywords="
+
+/*******************
+ APP评分跳转链接
+ ******************* */
+#define APPCommentURL @"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=1223341722&pageNumber=0&sortOrdering=2&mt=8"
+
+//APP引流数据
+#define JumpToAPPURL @"http://api.52kandianying.cn:81/yinliuapp.html"
+
+//获得设置里的积分
+#define ScoreURL  @"https://www.52kandianying.cn/appset.html"
+
 
 #endif /* PrefixHeader_pch */

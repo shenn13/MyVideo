@@ -7,7 +7,7 @@
 //
 
 #import "MovieTabBarViewController.h"
-#import "WIFINavigationVC.h"
+#import "MovieNagationViewController.h"
 @interface MovieTabBarViewController ()
 
 @end
@@ -35,7 +35,7 @@
         Class cts = NSClassFromString(classTitles[i]);
         
         UIViewController *vc = [[cts alloc] init];
-        WIFINavigationVC *naVC = [[WIFINavigationVC alloc] initWithRootViewController:vc];
+        MovieNagationViewController *naVC = [[MovieNagationViewController alloc] initWithRootViewController:vc];
         [mutArr addObject:naVC];
     }
     self.viewControllers = mutArr;
@@ -62,28 +62,6 @@
     }
 }
 
-
-
-- (BOOL)shouldAutorotate
-{
-//    if ([self.selectedViewController isEqual:[self.viewControllers objectAtIndex:0]]) {
-//        
-//        return [self.selectedViewController shouldAutorotate];
-//        
-//    }
-    return NO; // tabbar第一栏旋转控制交给下级控制器，其他栏不支持自动旋转
-}
-
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations
-{
-//    if ([self.selectedViewController isEqual:[self.viewControllers objectAtIndex:0]]) {
-//        
-//        return [self.selectedViewController supportedInterfaceOrientations];
-//        
-//    }
-    
-    return UIInterfaceOrientationMaskPortrait; // tabbar第一栏控制器所支持旋转方向交给下级控制器处理，其他栏只支持竖屏方向
-}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

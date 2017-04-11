@@ -41,7 +41,9 @@
 @implementation MySettingViewController
 
 -(void)viewWillAppear:(BOOL)animated{
+    
     self.navigationItem.rightBarButtonItem = nil;
+    
     NSString *scoreStr= [PDKeyChain keyChainLoad];
     _scoreLabel.text = [NSString stringWithFormat:@"你所拥有的积分:%@",scoreStr];
     [_tableView reloadData];
@@ -105,7 +107,6 @@
     
     XBSettingItemModel *secItem1 = [[XBSettingItemModel alloc] init];
     secItem1.funcName = @"清除缓存";
-    secItem1.img = [UIImage imageNamed:@""];
     secItem1.detailText = [NSString stringWithFormat:@"%.2fM缓存",[self getCanchSize]];
     secItem1.executeCode = ^{
     
@@ -271,9 +272,6 @@
     }
 }
 
-
-
-
 /*******
  1,清除缓存
  *******/
@@ -282,7 +280,7 @@
     UIAlertController *sheet = [UIAlertController alertControllerWithTitle:@"清除缓存" message:[NSString stringWithFormat:@"总共有%.2fM缓存",[self getCanchSize]] preferredStyle:UIAlertControllerStyleActionSheet];
     [sheet addAction:[UIAlertAction actionWithTitle:@"删除" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
         //清除磁盘
-        [[SDImageCache sharedImageCache] clearDisk];
+        [[SDImageCache sharedImageCache] clearDiskOnCompletion:nil];
         //清除内存
         [[SDImageCache sharedImageCache] clearMemory];
         

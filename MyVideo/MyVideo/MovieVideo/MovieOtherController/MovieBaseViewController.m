@@ -26,6 +26,7 @@
     [self.navigationController.navigationBar setBarTintColor:kMainScreenColor];
     
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName,nil]];
+    _hotWordData = [NSMutableArray array];
     
     self.view.backgroundColor = [UIColor colorWithRed:240.0/255 green:240.0/255 blue:246.0/255 alpha:1];
     
@@ -40,6 +41,7 @@
 -(void)getHotWordData{
     [[AFNetworkingManager manager] getDataWithUrl:HotWordurl parameters:nil successBlock:^(id data) {
         for (NSDictionary *dict in data[@"data"]) {
+            
             NSString *v_name = dict[@"v_name"];
             [_hotWordData addObject:v_name];
         }

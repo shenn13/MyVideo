@@ -16,7 +16,6 @@
 
 #import "GGActionSheet.h"
 
-#import "Masonry.h"
 
 typedef NS_ENUM(NSInteger,GGActionSheetType) {
     GGActionSheetTypeWithImg,

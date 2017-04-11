@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "MovieTabBarViewController.h"
 
 @interface ViewController ()
 
@@ -17,6 +18,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
+    button.center = self.view.center;
+    [button setTitle:@"点击" forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [button setBackgroundColor:[UIColor yellowColor]];
+    [button addTarget:self action:@selector(buttonClicked) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
+}
+
+-(void)buttonClicked{
+    MovieTabBarViewController *vc = [[MovieTabBarViewController alloc] init];
+    [self presentViewController:vc animated:YES completion:nil];
+    
 }
 
 - (void)didReceiveMemoryWarning {

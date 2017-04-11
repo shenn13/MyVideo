@@ -1,0 +1,11 @@
+platform :ios, '7.0' 
+
+target 'MyVideo' do
+pod 'SDWebImage'
+pod 'AFNetworking'
+pod 'MJRefresh'
+pod 'SVProgressHUD'
+pod 'JSONModel'
+pod 'Masonry'
+pod 'FMDB'
+end
