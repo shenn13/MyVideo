@@ -319,9 +319,13 @@
     
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:APPCommentURL]];
     
-    sleep(15);
+    static dispatch_once_t disOnce;
+    dispatch_once(&disOnce,^ {
+        sleep(15);
+        [self addScore:commentScore];
+    });
     
-    [self addScore:commentScore];
+   
 }
 
 /*******

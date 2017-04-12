@@ -32,10 +32,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-//    
-//    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-//    self.window.backgroundColor = [UIColor whiteColor];
-    
     UMConfigInstance.appKey = UM_APP_KEY;
     UMConfigInstance.channelId = nil;
     [MobClick startWithConfigure:UMConfigInstance];//配置以上参数后调用此方法初始化SDK！
@@ -59,12 +55,6 @@
         
         self.splash = splashAd;
     }
-    
-//    MovieTabBarViewController *tabBarVC = [[MovieTabBarViewController alloc] init];
-//    self.window.rootViewController = tabBarVC;
-//    
-//    [self.window makeKeyWindow];
-//    
     
     [self getScoreValue];
     [self checkKeyChain];
@@ -235,54 +225,55 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
     
-    //探探
-    NSURL *yuanFenBaURLStr = [NSURL URLWithString:@"yuanfenba://"];
-    //95秀
-    NSURL *beautyShowURLStr = [NSURL URLWithString:@"beautyshow://"];
-    //棋牌游戏
-    NSURL *QiPaiYouXiURLStr = [NSURL URLWithString:@"qipaiyouxi0214://"];
-    //交友
-    NSURL *JiaoYou0214URLStr = [NSURL URLWithString:@"jiaoyou0214://"];
-    
-    if ([[UIApplication sharedApplication] canOpenURL:yuanFenBaURLStr]) {
+    static dispatch_once_t disOnce;
+    dispatch_once(&disOnce,^ {
+        //探探
+        NSURL *yuanFenBaURLStr = [NSURL URLWithString:@"yuanfenba://"];
+        //95秀
+        NSURL *beautyShowURLStr = [NSURL URLWithString:@"beautyshow://"];
+        //棋牌游戏
+        NSURL *QiPaiYouXiURLStr = [NSURL URLWithString:@"qipaiyouxi0214://"];
+        //交友
+        NSURL *JiaoYou0214URLStr = [NSURL URLWithString:@"jiaoyou0214://"];
         
-        //   [[UIApplication sharedApplication] openURL:myURL_APP_A];
+        if ([[UIApplication sharedApplication] canOpenURL:yuanFenBaURLStr]) {
+            
+            //   [[UIApplication sharedApplication] openURL:myURL_APP_A];
+            
+            //  获得权限
+            _yuanFenBaURLSchemesIsOnStr = [_APPURLSchemeStr[0] objectForKey:@"title"];
+            
+            [self addScore:[_appDownLoadScore intValue]];
+            
+        }else{
+            
+            _yuanFenBaURLSchemesIsOnStr = @"";
+        }
         
-        //  获得权限
-        _yuanFenBaURLSchemesIsOnStr = [_APPURLSchemeStr[0] objectForKey:@"title"];
-        
-        [self addScore:[_appDownLoadScore intValue]];
-        
-    }else{
-        
-        _yuanFenBaURLSchemesIsOnStr = @"";
-    }
-    
-    if([[UIApplication sharedApplication] canOpenURL:beautyShowURLStr]){
-        
-        _beautyShowURLSchemesIsOnStr = [_APPURLSchemeStr[1] objectForKey:@"title"];
-        [self addScore:[_appDownLoadScore intValue]];
-    }else{
-        
-        _beautyShowURLSchemesIsOnStr = @"";
-    }
-    if([[UIApplication sharedApplication] canOpenURL:QiPaiYouXiURLStr]){
-        
-        _qiPaiYouXi0214URLSchemesIsOnStr = [_APPURLSchemeStr[2] objectForKey:@"title"];
-        [self addScore:[_appDownLoadScore intValue]];
-    }else{
-        _qiPaiYouXi0214URLSchemesIsOnStr = @"";
-    }
-    if([[UIApplication sharedApplication] canOpenURL:JiaoYou0214URLStr]){
-        
-        _jiaoYou0214URLSchemesIsOnStr = [_APPURLSchemeStr[3] objectForKey:@"title"];
-        [self addScore:[_appDownLoadScore intValue]];
-        
-    }else{
-        _jiaoYou0214URLSchemesIsOnStr = @"";
-    }
-    
-    
+        if([[UIApplication sharedApplication] canOpenURL:beautyShowURLStr]){
+            
+            _beautyShowURLSchemesIsOnStr = [_APPURLSchemeStr[1] objectForKey:@"title"];
+            [self addScore:[_appDownLoadScore intValue]];
+        }else{
+            
+            _beautyShowURLSchemesIsOnStr = @"";
+        }
+        if([[UIApplication sharedApplication] canOpenURL:QiPaiYouXiURLStr]){
+            
+            _qiPaiYouXi0214URLSchemesIsOnStr = [_APPURLSchemeStr[2] objectForKey:@"title"];
+            [self addScore:[_appDownLoadScore intValue]];
+        }else{
+            _qiPaiYouXi0214URLSchemesIsOnStr = @"";
+        }
+        if([[UIApplication sharedApplication] canOpenURL:JiaoYou0214URLStr]){
+            
+            _jiaoYou0214URLSchemesIsOnStr = [_APPURLSchemeStr[3] objectForKey:@"title"];
+            [self addScore:[_appDownLoadScore intValue]];
+            
+        }else{
+            _jiaoYou0214URLSchemesIsOnStr = @"";
+        }
+    });
 }
 
 
