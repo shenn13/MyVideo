@@ -28,7 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    self.navigationItem.rightBarButtonItem = nil;
     _dataArr = [NSMutableArray array];
     
     [self createCollectViewView];
