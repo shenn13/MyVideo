@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6407EC1B1E9F28CF00988A01 /* AppDownLoadVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6407EC1A1E9F28CF00988A01 /* AppDownLoadVC.m */; };
 		6498E4C41E9C8AB300E91026 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6498E4C31E9C8AB300E91026 /* main.m */; };
 		6498E4C71E9C8AB400E91026 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6498E4C61E9C8AB400E91026 /* AppDelegate.m */; };
 		6498E4CD1E9C8AB400E91026 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6498E4CB1E9C8AB400E91026 /* Main.storyboard */; };
@@ -132,6 +133,8 @@
 
 /* Begin PBXFileReference section */
 		3D84C3A362FDD332A9227782 /* libPods-MyVideo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyVideo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6407EC191E9F28CF00988A01 /* AppDownLoadVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDownLoadVC.h; sourceTree = "<group>"; };
+		6407EC1A1E9F28CF00988A01 /* AppDownLoadVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDownLoadVC.m; sourceTree = "<group>"; };
 		6498E4BF1E9C8AB300E91026 /* MyVideo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyVideo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6498E4C31E9C8AB300E91026 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6498E4C51E9C8AB400E91026 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -594,6 +597,8 @@
 				6498E5381E9C8B8F00E91026 /* CollectViewController.m */,
 				6498E5391E9C8B8F00E91026 /* MySettingViewController.h */,
 				6498E53A1E9C8B8F00E91026 /* MySettingViewController.m */,
+				6407EC191E9F28CF00988A01 /* AppDownLoadVC.h */,
+				6407EC1A1E9F28CF00988A01 /* AppDownLoadVC.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1043,6 +1048,7 @@
 				6498E5CE1E9C8B8F00E91026 /* PDKeyChain.m in Sources */,
 				6498E5C91E9C8B8F00E91026 /* CollectViewController.m in Sources */,
 				6498E6021E9C8B8F00E91026 /* TVFirstViewController.m in Sources */,
+				6407EC1B1E9F28CF00988A01 /* AppDownLoadVC.m in Sources */,
 				6498E6061E9C8B8F00E91026 /* TVViewController.m in Sources */,
 				6498E5CC1E9C8B8F00E91026 /* XBSettingSectionModel.m in Sources */,
 				6498E5C81E9C8B8F00E91026 /* UIView+MJ.m in Sources */,

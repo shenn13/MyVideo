@@ -11,6 +11,7 @@
 #import "XBSettingSectionModel.h"
 #import "XBSettingCell.h"
 #import "CollectViewController.h"
+#import "AppDownLoadVC.h"
 
 #import "EPProgressShow.h"
 #import <UnityAds/UnityAds.h>
@@ -115,8 +116,6 @@
     };
     secItem1.accessoryType = XBSettingAccessoryTypeDisclosureIndicator;
     
-    
-    
     XBSettingItemModel *secItem2 = [[XBSettingItemModel alloc] init];
     secItem2.funcName = @"已兑换视频";
     secItem2.img = [UIImage imageNamed:@""];
@@ -149,7 +148,7 @@
     secItem4.img = [UIImage imageNamed:@""];
     secItem4.detailText = [NSString stringWithFormat:@"下载APP获得%@积分",_appDelegate.appDownLoadScore];
     secItem4.executeCode = ^{
-        [self downLoadApp:[_appDelegate.appDownLoadScore intValue]];
+        [self downLoadApp];
     };
     secItem4.accessoryType = XBSettingAccessoryTypeDisclosureIndicator;
     
@@ -330,30 +329,11 @@
 /*******
  4,下载APP
  *******/
--(void)downLoadApp:(int)downLoadScore{
+-(void)downLoadApp{
     
-    
-    [[AFNetworkingManager manager] getDataWithUrl:JumpToAPPURL parameters:nil successBlock:^(id data) {
-        
-        NSArray  *appURLArr = data[@"data"];
-        
-        if ([_appDelegate.yuanFenBaURLSchemesIsOnStr isEqualToString:[appURLArr[0] objectForKey:@"title"]] ) {
-            
-            
-            NSLog(@"已经获得权限");
-            [SVProgressHUD showInfoWithStatus:@"已经获得95权限!!!"];
-            [SVProgressHUD dismissWithDelay:1.0];
-            
-        }else{
-            
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[appURLArr[0] objectForKey:@"url"]]];
-            [SVProgressHUD showInfoWithStatus:@"没有获得95权限..."];
-            [SVProgressHUD dismissWithDelay:1.0];
-        }
-        
-    } failureBlock:^(NSString *error) {
-        NSLog(@"---------------%@",error);
-    }];
+    AppDownLoadVC *appVC = [[AppDownLoadVC alloc] init];
+    appVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:appVC animated:YES];
 }
 
 /*******
