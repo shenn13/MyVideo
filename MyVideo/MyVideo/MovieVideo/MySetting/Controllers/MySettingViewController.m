@@ -29,7 +29,7 @@
     NSArray *_sectionArr;
     UILabel *_scoreLabel;
     NSString *_beginScoreStr;
-     NSString *_endScoreStr;
+    NSString *_endScoreStr;
     
     UITableView *_tableView;
 }
@@ -47,7 +47,7 @@
     NSString *scoreStr= [PDKeyChain keyChainLoad];
     _scoreLabel.text = [NSString stringWithFormat:@"你所拥有的积分:%@",scoreStr];
     [_tableView reloadData];
-   
+    
 }
 
 - (void)viewDidLoad {
@@ -89,7 +89,7 @@
     [header addSubview:imageView];
     
     
-     NSString *scoreStr= [PDKeyChain keyChainLoad];
+    NSString *scoreStr= [PDKeyChain keyChainLoad];
     _scoreLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(imageView.frame), kScreenWidth, 40)];
     _scoreLabel.text = [NSString stringWithFormat:@"你所拥有的积分:%@",scoreStr];
     _scoreLabel.textAlignment = NSTextAlignmentCenter;
@@ -107,7 +107,8 @@
     
     XBSettingItemModel *secItem1 = [[XBSettingItemModel alloc] init];
     secItem1.funcName = @"清除缓存";
-    secItem1.detailText = [NSString stringWithFormat:@"%.2fM缓存",[self getCanchSize]];
+    secItem1.detailImage = [UIImage imageNamed:@"about"];
+    secItem1.detailText = @"";
     secItem1.executeCode = ^{
         
         [self wipeCache];
@@ -159,7 +160,7 @@
     secItem5.detailText = [NSString stringWithFormat:@"分享获得%@积分",_appDelegate.shareScore];
     secItem5.executeCode = ^{
         
-         [self.actionSheetTitle showGGActionSheet];
+        [self.actionSheetTitle showGGActionSheet];
     };
     secItem5.accessoryType = XBSettingAccessoryTypeDisclosureIndicator;
     
@@ -305,7 +306,7 @@
  *******/
 
 -(void)collect{
-
+    
     CollectViewController *collectVC = [[CollectViewController alloc] init];
     collectVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:collectVC animated:YES];
@@ -318,14 +319,12 @@
 - (void)giveMeStar:(int)commentScore{
     
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:APPCommentURL]];
-    
     static dispatch_once_t disOnce;
     dispatch_once(&disOnce,^ {
-        sleep(15);
+        
         [self addScore:commentScore];
     });
     
-   
 }
 
 /*******
@@ -336,7 +335,7 @@
     
     [[AFNetworkingManager manager] getDataWithUrl:JumpToAPPURL parameters:nil successBlock:^(id data) {
         
-       NSArray  *appURLArr = data[@"data"];
+        NSArray  *appURLArr = data[@"data"];
         
         if ([_appDelegate.yuanFenBaURLSchemesIsOnStr isEqualToString:[appURLArr[0] objectForKey:@"title"]] ) {
             
@@ -347,7 +346,7 @@
             
         }else{
             
-             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[appURLArr[0] objectForKey:@"url"]]];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[appURLArr[0] objectForKey:@"url"]]];
             [SVProgressHUD showInfoWithStatus:@"没有获得95权限..."];
             [SVProgressHUD dismissWithDelay:1.0];
         }
@@ -377,10 +376,10 @@
     NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
     NSArray* imageArray = @[[UIImage imageNamed:@"logoimage"]];
     if (imageArray){
-        [shareParams SSDKSetupShareParamsByText:@"12322233"
+        [shareParams SSDKSetupShareParamsByText:@"夜色影音打造属于自己的播放器"
                                          images:imageArray
                                             url:[NSURL URLWithString:APPCommentURL]
-                                          title:@"来呀，互相伤害啊！！"
+                                          title:@"来吧，来玩吧！！"
                                            type:SSDKContentTypeAuto];
     }
     [ShareSDK share:SSDKPlatformTypeQQ
@@ -416,10 +415,10 @@
     NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
     NSArray* imageArray = @[[UIImage imageNamed:@"logoimage"]];
     if (imageArray){
-        [shareParams SSDKSetupShareParamsByText:@"1232344"
+        [shareParams SSDKSetupShareParamsByText:@"夜色影音打造属于自己的播放器"
                                          images:imageArray
                                             url:[NSURL URLWithString:APPCommentURL]
-                                          title:@"来呀，互相伤害啊！！"
+                                          title:@"来吧，来玩吧！！"
                                            type:SSDKContentTypeAuto];
     }
     [ShareSDK share:SSDKPlatformTypeWechat
@@ -493,7 +492,7 @@
         [self addScore:[_appDelegate.watchVideoScore intValue]];
     }else{
         [[EPProgressShow showHUDManager] showErrorWithStatus:@"获得积分失败"];
-
+        
     }
     
 }
@@ -501,7 +500,7 @@
  7，检测更新
  *******/
 -(void)update{
-
+    
     
     double localVersion =[[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"] doubleValue];
     
