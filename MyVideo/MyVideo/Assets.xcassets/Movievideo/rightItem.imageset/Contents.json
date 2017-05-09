@@ -6,11 +6,12 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "search_600px_1181399_easyicon.net.png",
+      "filename" : "icon_navigation_search_press@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "icon_navigation_search_press@3x.png",
       "scale" : "3x"
     }
   ],
