@@ -91,8 +91,6 @@
 		6498E6051E9C8B8F00E91026 /* TVThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6498E5AB1E9C8B8F00E91026 /* TVThirdViewController.m */; };
 		6498E6061E9C8B8F00E91026 /* TVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6498E5AD1E9C8B8F00E91026 /* TVViewController.m */; };
 		6498E6071E9C8B8F00E91026 /* VideosDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6498E5AF1E9C8B8F00E91026 /* VideosDetailViewController.m */; };
-		6498E6091E9C8B9300E91026 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6498E6081E9C8B9300E91026 /* GoogleMobileAds.framework */; };
-		6498E60B1E9C8B9900E91026 /* UMMobClick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6498E60A1E9C8B9900E91026 /* UMMobClick.framework */; };
 		6498E60D1E9C8BA200E91026 /* UnityAds.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6498E60C1E9C8BA200E91026 /* UnityAds.bundle */; };
 		6498E60F1E9C8BA900E91026 /* UnityAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6498E60E1E9C8BA900E91026 /* UnityAds.framework */; };
 		6498E6121E9C8BF500E91026 /* MovieNagationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6498E6111E9C8BF500E91026 /* MovieNagationViewController.m */; };
@@ -282,8 +280,6 @@
 		6498E5AD1E9C8B8F00E91026 /* TVViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVViewController.m; sourceTree = "<group>"; };
 		6498E5AE1E9C8B8F00E91026 /* VideosDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideosDetailViewController.h; sourceTree = "<group>"; };
 		6498E5AF1E9C8B8F00E91026 /* VideosDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideosDetailViewController.m; sourceTree = "<group>"; };
-		6498E6081E9C8B9300E91026 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
-		6498E60A1E9C8B9900E91026 /* UMMobClick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMMobClick.framework; sourceTree = "<group>"; };
 		6498E60C1E9C8BA200E91026 /* UnityAds.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UnityAds.bundle; sourceTree = "<group>"; };
 		6498E60E1E9C8BA900E91026 /* UnityAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnityAds.framework; sourceTree = "<group>"; };
 		6498E6101E9C8BF500E91026 /* MovieNagationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieNagationViewController.h; sourceTree = "<group>"; };
@@ -327,7 +323,6 @@
 				6498E61E1E9C8D0200E91026 /* CoreFoundation.framework in Frameworks */,
 				6498E61A1E9C8CC200E91026 /* JavaScriptCore.framework in Frameworks */,
 				6498E6141E9C8CA500E91026 /* libicucore.tbd in Frameworks */,
-				6498E60B1E9C8B9900E91026 /* UMMobClick.framework in Frameworks */,
 				6498E5E71E9C8B8F00E91026 /* KakaoConnector.framework in Frameworks */,
 				6498E5EC1E9C8B8F00E91026 /* QQConnector.framework in Frameworks */,
 				6498E5F01E9C8B8F00E91026 /* WechatConnector.framework in Frameworks */,
@@ -351,7 +346,6 @@
 				6498E5E41E9C8B8F00E91026 /* GooglePlusConnector.framework in Frameworks */,
 				6498E5F11E9C8B8F00E91026 /* WhatsAppConnector.framework in Frameworks */,
 				6498E5E51E9C8B8F00E91026 /* InstagramConnector.framework in Frameworks */,
-				6498E6091E9C8B9300E91026 /* GoogleMobileAds.framework in Frameworks */,
 				6498E5DB1E9C8B8F00E91026 /* ShareSDKConfigFile.framework in Frameworks */,
 				6498E60F1E9C8BA900E91026 /* UnityAds.framework in Frameworks */,
 				6498E5EB1E9C8B8F00E91026 /* PrintConnector.framework in Frameworks */,
@@ -827,8 +821,6 @@
 				6498E6131E9C8CA500E91026 /* libicucore.tbd */,
 				6498E60E1E9C8BA900E91026 /* UnityAds.framework */,
 				6498E60C1E9C8BA200E91026 /* UnityAds.bundle */,
-				6498E60A1E9C8B9900E91026 /* UMMobClick.framework */,
-				6498E6081E9C8B9300E91026 /* GoogleMobileAds.framework */,
 				3D84C3A362FDD332A9227782 /* libPods-MyVideo.a */,
 			);
 			name = Frameworks;

@@ -8,4 +8,7 @@ pod 'SVProgressHUD'
 pod 'JSONModel'
 pod 'Masonry'
 pod 'FMDB'
+pod 'Google-Mobile-Ads-SDK'
+pod 'UMengAnalytics'
+pod 'XHVersion'
 end

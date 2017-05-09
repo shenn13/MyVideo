@@ -61,8 +61,7 @@
     [self loadAdGDTData];
     
     [self getVideosData];
-   
-    [self startNewGame];
+ 
 
 }
 
@@ -132,7 +131,7 @@
     //播放完成回调
     [_playerView endPlay:^{
         //播放完毕再次加载广告
-        [self startNewGame];
+        [self setInterstitial];
         
         _selectButton.backgroundColor = [UIColor colorWithRed:137/255.0 green:197/255.0 blue:255/255.0 alpha:1];
         _selectButton.selected = !_selectButton.selected;
@@ -240,7 +239,7 @@
 -(void)buttonClick:(UIButton *)button{
     
     //选集再次加载广告
-    [self startNewGame];
+     [self setInterstitial];
     
     if (!button.isSelected) {
         self.selectButton.selected = !self.selectButton.selected;
@@ -320,30 +319,30 @@
     [interstitial loadRequest:[GADRequest request]];
     return interstitial;
 }
--(void)startNewGame{
 
+#pragma mark  广点通广告---------
+- (void)interstitialDidDismissScreen:(GDTMobInterstitial *)interstitial{
+    [_interstitialObj loadAd];
+    
+}
+#pragma mark - GADInterstitialDelegate -
+- (void)interstitialDidReceiveAd:(GADInterstitial *)ad{
     
     if ([self.interstitial isReady]) {
         
         [self.interstitial presentFromRootViewController:self];
+        
     }else{
         
          [_interstitialObj presentFromRootViewController:self];
     }
 }
-
-#pragma mark  广点通广告---------
-
-- (void)interstitialDidDismissScreen:(GDTMobInterstitial *)interstitial{
-     [self setInterstitial];
-    
-    [_interstitialObj loadAd];
-    
-}
-#pragma mark - GADInterstitialDelegate -
+//分配失败重新分配
 - (void)interstitial:(GADInterstitial *)ad didFailToReceiveAdWithError:(GADRequestError *)error {
     [self setInterstitial];
 }
+
+#pragma mark - GADInterstitialDelegate -
 - (void)interstitialAdDidDismissFullScreenModal:(GDTMobInterstitial *)interstitial{
     
     NSLog(@"广告被关闭");
@@ -358,7 +357,7 @@
 //选集视图的显示与隐藏
 -(void)pausePlayShowAd{
     
-    [self startNewGame];
+    [self setInterstitial];
 }
 
 - (void)dealloc {
