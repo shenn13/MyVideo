@@ -17,12 +17,11 @@
 #import <UnityAds/UnityAds.h>
 #import "AppDelegate.h"
 
+#import "SuggestionsViewController.h"
+
 #import "GGActionSheet.h"
 #import <ShareSDK/ShareSDK.h>
 #import <ShareSDKExtension/ShareSDK+Extension.h>
-#import <ShareSDKUI/ShareSDK+SSUI.h>
-#import <ShareSDKUI/SSUIShareActionSheetStyle.h>
-
 #import "XHVersion.h"
 
 @interface MySettingViewController ()<UnityAdsDelegate,UITableViewDelegate,UITableViewDataSource,GGActionSheetDelegate>{
@@ -180,39 +179,35 @@
     
     /********************************************************************************************/
     
+    
     XBSettingItemModel *secItem7 = [[XBSettingItemModel alloc] init];
-    secItem7.funcName = @"关于APP";
-    secItem7.img = [UIImage imageNamed:@""];
-    secItem7.detailText = @"版本1.01";
+    secItem7.funcName = @"建议反馈";
     secItem7.executeCode = ^{
-        NSLog(@"关于APP");
-        
-        if (![PDKeyChain keyChainLoad]) {
-            
-            NSLog(@"keyChain load fail");
-            
-        }else {
-            
-            NSLog(@"keyChain load success: %@ ",[PDKeyChain keyChainLoad]);
-        }
-        
+        [self.navigationController pushViewController:[SuggestionsViewController new] animated:YES];
     };
     secItem7.accessoryType = XBSettingAccessoryTypeDisclosureIndicator;
     
     
     XBSettingItemModel *secItem8 = [[XBSettingItemModel alloc] init];
-    secItem8.funcName = @"检测更新";
-//    secItem8.img = [UIImage imageNamed:@""];
-//    secItem8.detailText = @"已是最新版";
+    secItem8.funcName = @"关于APP";
+    secItem8.img = [UIImage imageNamed:@""];
+    secItem8.detailText = @"版本1.01";
     secItem8.executeCode = ^{
-        
-        [self update];
+        NSLog(@"关于APP");
     };
     secItem8.accessoryType = XBSettingAccessoryTypeDisclosureIndicator;
     
+    
+    XBSettingItemModel *secItem9 = [[XBSettingItemModel alloc] init];
+    secItem9.funcName = @"检测更新";
+    secItem9.executeCode = ^{
+        [self update];
+    };
+    secItem9.accessoryType = XBSettingAccessoryTypeDisclosureIndicator;
+    
     XBSettingSectionModel *section3 = [[XBSettingSectionModel alloc]init];
     section3.sectionHeaderHeight = 18;
-    section3.itemArray = @[secItem7,secItem8];
+    section3.itemArray = @[secItem7,secItem8,secItem9];
     
     _sectionArr = @[section1,section2,section3];
     
@@ -480,7 +475,8 @@
  7，检测更新
  *******/
 -(void)update{
-     [XHVersion checkNewVersion];
+    
+    [XHVersion checkNewVersion];
 }
 
 -(void)addScore:(int)score{

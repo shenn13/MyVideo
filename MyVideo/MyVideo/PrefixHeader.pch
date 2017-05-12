@@ -36,11 +36,6 @@
 
 #define IntervalColor [UIColor colorWithRed:240.0/255 green:240.0/255 blue:240.0/255 alpha:1]
 
-//选集按钮未选中颜色
-#define selectButtonColor [UIColor colorWithRed:240.0/255 green:240.0/255 blue:240.0/255 alpha:1]
-//选集选中颜色
-#define selectionsBtnColor [UIColor colorWithRed:0/255.0 green:181/255.0 blue:255/255.0 alpha:1]
-
 #define COLOR(R,G,B,A) [UIColor colorWithRed:(R)/255.0 green:(G)/255.0 blue:(B)/255.0 alpha:A]
 
 #import "UIImageView+WebCache.h"
@@ -70,36 +65,12 @@
 //友盟统计
 #define UM_APP_KEY @"570c863f67e58e5b40000792"
 #define UnityAds_APP @"1320670"
+
+
 #import "PDKeyChain.h"
 #import "MySetting.h"
 
-
-#define MarkUrl @"https://api.52kandianying.cn/index.html?method=mark&appid=39&id=58"
-//福利片
-#define Homeurl @"https://api.52kandianying.cn/index.html?method=typeinfos&id=155"
-//电视剧
-#define HomeTVURL @"https://api.52kandianying.cn/index.html?method=typeinfos&id=71"
-//电影
-#define HomeMovieURL @"https://api.52kandianying.cn/index.html?method=typeinfos&id=1"
-
-//详情页面
-#define Detailurl @"https://api.52kandianying.cn/index.html?method=videoinfo&"
-
-//关键字热门搜索
-#define HotWordurl @"https://api.52kandianying.cn/index.html?method=hotkeys"
-//搜索
-#define SearchUrl @"https://api.52kandianying.cn/index.html?method=search&keywords="
-
-/*******************
- APP评分跳转链接
- ******************* */
-#define APPCommentURL @"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=1223341722&pageNumber=0&sortOrdering=2&mt=8"
-
-//APP引流数据
-#define JumpToAPPURL @"http://api.52kandianying.cn:81/yinliuapp.html"
-
-//获得设置里的积分
-#define ScoreURL  @"https://www.52kandianying.cn/appset.html"
+#import "Api.h"
 
 
 #endif /* PrefixHeader_pch */

@@ -17,8 +17,40 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
+    //导航栏
+    UIButton *setBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    setBtn.frame = CGRectMake(0, 0, 10, 19);
+    [setBtn setBackgroundImage:[UIImage imageNamed:@"back.png"] forState:UIControlStateNormal];
+    [setBtn addTarget:self action:@selector(popToBack) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc]initWithCustomView:setBtn];
+    self.navigationItem.leftBarButtonItem = leftItem;
+    
+    if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)])
+    {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+    }
 }
 
+    
+- (void)popToBack{
+    
+    [self popViewControllerAnimated:YES];
+}
+    
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
+    {
+        if (self.viewControllers.count > 0) {
+            viewController.hidesBottomBarWhenPushed = YES;
+        }
+        [super pushViewController:viewController animated:animated];
+        
+    }
+    
+- (UIViewController *)popViewControllerAnimated:(BOOL)animated{
+    return [super popViewControllerAnimated:animated];
+}
 
 - (BOOL)shouldAutorotate
 {

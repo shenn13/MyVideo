@@ -45,6 +45,19 @@
     }];
     
     
+    [self customNavigationItem];
+}
+    
+    //自定制当前视图控制器的navigationItem
+-(void)customNavigationItem{
+    
+    UIBarButtonItem *backbtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back.png"] style:UIBarButtonItemStylePlain target:self action:@selector(popDoBack)];
+    
+    self.navigationItem.leftBarButtonItem =  backbtn;
+}
+-(void)popDoBack{
+    
+    [self.navigationController popViewControllerAnimated:NO];
 }
 
 #pragma mark - TableViewDelegate

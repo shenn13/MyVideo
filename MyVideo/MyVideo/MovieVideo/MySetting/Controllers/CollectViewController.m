@@ -43,6 +43,7 @@
     self.navigationItem.leftBarButtonItem =  backbtn;
 }
 -(void)popDoBack{
+    
     [self.navigationController popViewControllerAnimated:NO];
 }
 

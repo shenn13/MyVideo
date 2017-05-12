@@ -21,11 +21,24 @@ PODS:
   - JSONModel (1.7.0)
   - Masonry (1.0.2)
   - MJRefresh (3.1.12)
+  - MOBFoundation (2.2.17)
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
+  - ShareSDK3 (3.6.2.1):
+    - MOBFoundation
+    - ShareSDK3/ShareSDK (= 3.6.2.1)
+  - ShareSDK3/ShareSDK (3.6.2.1):
+    - MOBFoundation
+  - ShareSDK3/ShareSDKPlatforms/QQ (3.6.2.1):
+    - MOBFoundation
+  - ShareSDK3/ShareSDKPlatforms/SinaWeibo (3.6.2.1):
+    - MOBFoundation
+  - ShareSDK3/ShareSDKPlatforms/WeChat (3.6.2.1):
+    - MOBFoundation
   - SVProgressHUD (2.1.2)
   - UMengAnalytics (4.2.4)
+  - UnityAds (2.1.0)
   - XHVersion (1.0.1)
 
 DEPENDENCIES:
@@ -35,9 +48,15 @@ DEPENDENCIES:
   - JSONModel
   - Masonry
   - MJRefresh
+  - MOBFoundation
   - SDWebImage
+  - ShareSDK3
+  - ShareSDK3/ShareSDKPlatforms/QQ
+  - ShareSDK3/ShareSDKPlatforms/SinaWeibo
+  - ShareSDK3/ShareSDKPlatforms/WeChat
   - SVProgressHUD
   - UMengAnalytics
+  - UnityAds
   - XHVersion
 
 SPEC CHECKSUMS:
@@ -47,11 +66,14 @@ SPEC CHECKSUMS:
   JSONModel: 840bc0fcffb24b8454d2c026bf26fea454b8e98d
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  MOBFoundation: fa12570bb16a7655dca3b3472ce6cd962e7ff5e3
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  ShareSDK3: 3c531b5e64576e4b947127b9b1f46b685dfa3b37
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   UMengAnalytics: ef8d45f94c0e5771dc364cf6a5731d9d3b101da2
+  UnityAds: 99645a5b7011c96d1e9204f8540ce66ea1b7dfb4
   XHVersion: 9a108b063d3b935da224f5ba5c4bd3cb875616d7
 
-PODFILE CHECKSUM: 4e554b5c0432c763e7386c8a7cf251b1f160a83a
+PODFILE CHECKSUM: 5bc8b4a3ec60e2e459558809055e33c89a084c31
 
 COCOAPODS: 1.1.1
