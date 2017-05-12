@@ -351,9 +351,9 @@
     NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
     NSArray* imageArray = @[[UIImage imageNamed:@"logoimage"]];
     if (imageArray){
-        [shareParams SSDKSetupShareParamsByText:@"夜色影音打造属于自己的播放器"
+        [shareParams SSDKSetupShareParamsByText:@"快点告诉你的小伙伴一起来玩吧"
                                          images:imageArray
-                                            url:[NSURL URLWithString:APPCommentURL]
+                                            url:[NSURL URLWithString:APPDownURL]
                                           title:@"来吧，来玩吧！！"
                                            type:SSDKContentTypeAuto];
     }
@@ -390,9 +390,9 @@
     NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
     NSArray* imageArray = @[[UIImage imageNamed:@"logoimage"]];
     if (imageArray){
-        [shareParams SSDKSetupShareParamsByText:@"夜色影音打造属于自己的播放器"
+        [shareParams SSDKSetupShareParamsByText:@"快点告诉你的小伙伴一起来玩吧"
                                          images:imageArray
-                                            url:[NSURL URLWithString:APPCommentURL]
+                                            url:[NSURL URLWithString:APPDownURL]
                                           title:@"来吧，来玩吧！！"
                                            type:SSDKContentTypeAuto];
     }

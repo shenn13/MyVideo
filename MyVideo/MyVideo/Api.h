@@ -34,6 +34,12 @@
  ******************* */
 #define APPCommentURL @"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=1223341722&pageNumber=0&sortOrdering=2&mt=8"
 
+/*******************
+ APP下载跳转链接
+ ******************* */
+#define APPDownURL @"https://itunes.apple.com/cn/app/id1226885234?mt=8"
+
+
 //APP引流数据
 #define JumpToAPPURL @"http://api.52kandianying.cn:81/yinliuapp.html"
 //获得设置里的积分
